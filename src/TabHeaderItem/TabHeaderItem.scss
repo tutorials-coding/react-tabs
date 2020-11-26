@@ -1,0 +1,50 @@
+$background-color: cadetblue;
+$border-radius: 10;
+
+@function px($value) {
+  @return #{$value}px;
+}
+
+@mixin with-inverted-radius {
+  width: px($border-radius);
+  transform: rotate(180deg);
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: transparent;
+    bottom: px(-2 * $border-radius);
+    height: px(2 * $border-radius);
+    width: px($border-radius);
+    border-top-left-radius: px($border-radius);
+    box-shadow: 0 px(-$border-radius) 0 0 $background-color;
+  }
+}
+
+.tab-header-item__container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  background-color: transparent;
+  overflow: hidden;
+
+  & > * {
+    cursor: pointer;
+  }
+
+  .tab-header-item__left-corner {
+    @include with-inverted-radius();
+  }
+  .tab-header-item__content-continer {
+    height: 100%;
+    flex: 1;
+    background-color: $background-color;
+    border-top-left-radius: px($border-radius);
+    border-top-right-radius: px($border-radius);
+  }
+  .tab-header-item__right-corner {
+    @include with-inverted-radius();
+    transform: scale(1, -1);
+  }
+}
