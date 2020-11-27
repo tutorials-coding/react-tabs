@@ -8,18 +8,10 @@
 
 @mixin with-inverted-radius {
   width: px($border-radius);
-  transform: rotate(180deg);
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    background-color: transparent;
-    bottom: px(-2 * $border-radius);
-    height: px(2 * $border-radius);
-    width: px($border-radius);
-    border-top-left-radius: px($border-radius);
-    box-shadow: 0 px(-$border-radius) 0 0 $tab-bg-color-active;
-  }
+  background-color: transparent;
+  height: px(2 * $border-radius);
+  border-top-left-radius: px($border-radius);
+  box-shadow: 0 px(-$border-radius) 0 0 $tab-bg-color-active;
 }
 
 .tab-header-item__container {
