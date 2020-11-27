@@ -1,0 +1,8 @@
+.tabs-header__container {
+  width: 100%;
+  display: flex;
+
+  & > .tabs-header__header-item-container {
+    flex: 1;
+  }
+}

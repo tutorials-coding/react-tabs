@@ -1,17 +1,17 @@
 import React from 'react'
 
-import { TabHeader } from './TabHeader'
+import { TabsHeader } from './TabsHeader'
 
 export default {
-  title: 'TabHeader',
-  component: TabHeader,
+  title: 'TabsHeader',
+  component: TabsHeader,
   argTypes: {
     tabs: { control: 'object' },
     activeIndex: { control: 'number' },
   },
 }
 
-const Template = (args) => <TabHeader {...args} />
+const Template = (args) => <TabsHeader {...args} />
 
 export const Base = Template.bind({})
 Base.args = {
