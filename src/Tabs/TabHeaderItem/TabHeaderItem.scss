@@ -1,10 +1,4 @@
-$background-color-active: #42c987;
-$background-color: #8bd8bd;
-$border-radius: 10;
-
-@function px($value) {
-  @return #{$value}px;
-}
+@import '../../base.scss';
 
 @mixin corner {
   width: px($border-radius);
@@ -24,7 +18,7 @@ $border-radius: 10;
     height: px(2 * $border-radius);
     width: px($border-radius);
     border-top-left-radius: px($border-radius);
-    box-shadow: 0 px(-$border-radius) 0 0 $background-color-active;
+    box-shadow: 0 px(-$border-radius) 0 0 $tab-bg-color-active;
   }
 }
 
@@ -55,7 +49,7 @@ $border-radius: 10;
     align-items: center;
     justify-content: center;
 
-    background-color: $background-color;
+    background-color: $tab-bg-color;
     border-top-left-radius: px($border-radius);
     border-top-right-radius: px($border-radius);
 
@@ -64,7 +58,7 @@ $border-radius: 10;
     }
 
     &--active {
-      background-color: $background-color-active;
+      background-color: $tab-bg-color-active;
     }
   }
   .tab-header-item__right-corner {

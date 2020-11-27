@@ -1,0 +1,26 @@
+@import '../../base.scss';
+
+.tabs__container {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: px($border-radius);
+  background-color: $tabs-container-bg-color;
+  display: flex;
+  flex-direction: column;
+
+  .tabs__header-container {
+  }
+
+  .tabs__content-container {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: $tab-bg-color-active;
+    border-bottom-left-radius: px($border-radius);
+    border-bottom-right-radius: px($border-radius);
+  }
+}

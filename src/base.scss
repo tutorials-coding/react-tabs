@@ -1,0 +1,9 @@
+$tabs-container-bg-color: #9c6453;
+
+$tab-bg-color-active: #42c987;
+$tab-bg-color: #8bd8bd;
+$border-radius: 10;
+
+@function px($value) {
+  @return #{$value}px;
+}

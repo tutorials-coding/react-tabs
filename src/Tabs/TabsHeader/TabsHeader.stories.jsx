@@ -8,6 +8,7 @@ export default {
   argTypes: {
     tabs: { control: 'object' },
     activeIndex: { control: 'number' },
+    onTabClick: { action: 'clicked' },
   },
 }
 

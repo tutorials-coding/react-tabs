@@ -4,16 +4,18 @@ import TabHeaderItem from '../TabHeaderItem'
 
 import './TabsHeader.scss'
 
-export function TabsHeader({ tabs, activeIndex }) {
-  function handleClick() {}
+export function TabsHeader({ tabs, activeIndex, onTabClick }) {
+  function handleClick(index) {
+    onTabClick(index)
+  }
 
   return (
-    <div className="tabs-header__container" onClick={handleClick}>
+    <div className="tabs-header__container">
       {tabs.map((tab, index) => (
         <div className="tabs-header__header-item-container" key={index}>
           <TabHeaderItem
             text={tab.text}
-            onClick={tab.onClick}
+            onClick={() => handleClick(index)}
             active={index === activeIndex}
           />
         </div>
