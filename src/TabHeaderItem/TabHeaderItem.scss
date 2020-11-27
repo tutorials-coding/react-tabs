@@ -1,8 +1,15 @@
-$background-color: cadetblue;
+$background-color-active: #42c987;
+$background-color: #8bd8bd;
 $border-radius: 10;
 
 @function px($value) {
   @return #{$value}px;
+}
+
+@mixin corner {
+  width: px($border-radius);
+  transform: rotate(180deg);
+  position: relative;
 }
 
 @mixin with-inverted-radius {
@@ -17,7 +24,7 @@ $border-radius: 10;
     height: px(2 * $border-radius);
     width: px($border-radius);
     border-top-left-radius: px($border-radius);
-    box-shadow: 0 px(-$border-radius) 0 0 $background-color;
+    box-shadow: 0 px(-$border-radius) 0 0 $background-color-active;
   }
 }
 
@@ -28,23 +35,43 @@ $border-radius: 10;
   align-items: flex-end;
   background-color: transparent;
   overflow: hidden;
+  font-family: Helvetica, Arial, sans-serif;
 
   & > * {
     cursor: pointer;
   }
 
   .tab-header-item__left-corner {
-    @include with-inverted-radius();
+    @include corner();
+    &--active {
+      @include with-inverted-radius();
+    }
   }
-  .tab-header-item__content-continer {
+  .tab-header-item__content-container {
     height: 100%;
     flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: $background-color;
     border-top-left-radius: px($border-radius);
     border-top-right-radius: px($border-radius);
+
+    .tab-header-item__content-container__text {
+      color: #ffffff;
+    }
+
+    &--active {
+      background-color: $background-color-active;
+    }
   }
   .tab-header-item__right-corner {
-    @include with-inverted-radius();
-    transform: scale(1, -1);
+    @include corner();
+    &--active {
+      @include with-inverted-radius();
+      transform: scale(1, -1);
+    }
   }
 }
