@@ -2,16 +2,13 @@
 
 @mixin corner {
   width: px($border-radius);
-  transform: rotate(180deg);
-  position: relative;
 }
 
 @mixin with-inverted-radius {
-  width: px($border-radius);
   background-color: transparent;
   height: px(2 * $border-radius);
-  border-top-left-radius: px($border-radius);
-  box-shadow: 0 px(-$border-radius) 0 0 $tab-bg-color-active;
+  border-bottom-right-radius: px($border-radius);
+  box-shadow: 0 px($border-radius) 0 0 $tab-bg-color-active;
 }
 
 .tab-header-item__container {
@@ -57,7 +54,7 @@
     @include corner();
     &--active {
       @include with-inverted-radius();
-      transform: scale(1, -1);
+      transform: scale(-1, 1);
     }
   }
 }

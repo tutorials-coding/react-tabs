@@ -7,7 +7,6 @@ export default {
   component: Tabs,
   argTypes: {
     tabs: { control: 'object' },
-    activeIndex: { control: 'number' },
   },
 }
 
@@ -29,5 +28,4 @@ Base.args = {
       renderContent: () => <div>Settings Tab</div>,
     },
   ],
-  activeIndex: 0,
 }
